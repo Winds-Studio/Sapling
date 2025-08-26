@@ -6,10 +6,10 @@ Subject: [PATCH] SparklyPaper: Track each world MSPT
 Original project: https://github.com/SparklyPower/SparklyPaper
 
 diff --git a/net/minecraft/server/MinecraftServer.java b/net/minecraft/server/MinecraftServer.java
-index bfc32a5110ae9576a521b20af3a2da619bf1f295..98a469f8e857f4537cbd6ee8fdb0f4d73613a600 100644
+index c3dcde8cf7b7e3b0eba0f7b8f1198725c8e40f77..5d9dd6feb9a33351de6b9b3d7bceb3e904585e4d 100644
 --- a/net/minecraft/server/MinecraftServer.java
 +++ b/net/minecraft/server/MinecraftServer.java
-@@ -1687,7 +1687,16 @@ public abstract class MinecraftServer extends ReentrantBlockableEventLoop<TickTa
+@@ -1686,7 +1686,16 @@ public abstract class MinecraftServer extends ReentrantBlockableEventLoop<TickTa
      // Leaf start - SparklyPaper - parallel world ticking mod (move level ticking logic out for branch convergence)
      private void tickLevel(ServerLevel serverLevel, BooleanSupplier hasTimeLeft) {
          try {
@@ -27,10 +27,10 @@ index bfc32a5110ae9576a521b20af3a2da619bf1f295..98a469f8e857f4537cbd6ee8fdb0f4d7
              CrashReport crashReport = CrashReport.forThrowable(levelTickingException, "Exception ticking world");
              serverLevel.fillReportDetails(crashReport);
 diff --git a/net/minecraft/server/level/ServerLevel.java b/net/minecraft/server/level/ServerLevel.java
-index e0090df1b79ab7ba21fc8959480c94e4ce2e95de..78b74f8524ae8de5b9287a2f795c5845750f0036 100644
+index 0a561d59a20a572f4512d3290134404617bc1ac3..5178290d060dd8a72f0e6cb77f77d19683a866d0 100644
 --- a/net/minecraft/server/level/ServerLevel.java
 +++ b/net/minecraft/server/level/ServerLevel.java
-@@ -581,6 +581,12 @@ public class ServerLevel extends Level implements ServerEntityGetter, WorldGenLe
+@@ -571,6 +571,12 @@ public class ServerLevel extends Level implements ServerEntityGetter, WorldGenLe
      }
      // Paper end - chunk tick iteration
  
