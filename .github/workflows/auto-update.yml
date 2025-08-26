@@ -3,7 +3,7 @@ name: Automatically update Leaf commit hash
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "0 0 1/5 * *"
 
 jobs:
   build:
